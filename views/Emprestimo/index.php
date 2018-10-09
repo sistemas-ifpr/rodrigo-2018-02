@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -6,15 +6,15 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Reservas';
+$this->title = 'Emprestimos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="reserva-index">
+<div class="emprestimo-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Reserva', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Emprestimo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -22,19 +22,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'marca',
-            'modelo',
-            'data_reserva',
-            'cliente',
-            //'data_baixa_reserva',
-            //'funcionario',
 
             [
-                'attribute'=>'data_reserva',
+                'attribute'=>'data_emprestimo',
                 'format'=>['DateTime','php:d/m/Y']
             ],
 
+            [
+                'attribute'=>'data_devolucao',
+                'format'=>['DateTime','php:d/m/Y']
+            ],
+            'id',
+            'placa',
+            'data_emprestimo',
+            'data_devolucao',
+            'valor_locacao',
+            //'cliente',
+            //'funcionario',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

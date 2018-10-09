@@ -24,10 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'nome',
-            'email:email',
+            //'email:email',
             'senha',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            
+
+            [ 'attribute' => 'email', 
+             'format' => 'html',
+            'value' => function ($model){
+                return '<a href="mailto:'.$model->email.'">'.$model->email.'</a>';
+            }],
+            ['class' => 'yii\grid\ActionColumn']
         ],
     ]); ?>
 </div>

@@ -1,16 +1,16 @@
-<?php
+ <?php
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Veiculo */
+/* @var $model app\models\Emprestimo */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Veiculos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Emprestimos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="veiculo-view">
+<div class="emprestimo-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,11 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'placa',
-            'marca',
-            'modelo',
-            'ano_fabricacao',
-            'valor_diario',
-            'foto',
+            'data_emprestimo',
+            'data_devolucao',
+            'valor_locacao',
+            'cliente',
+            'funcionario',
         ],
     ]) ?>
 

@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Veiculo;
+use app\models\Emprestimo;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * VeiculoController implements the CRUD actions for Veiculo model.
+ * EmprestimoController implements the CRUD actions for Emprestimo model.
  */
-class VeiculoController extends Controller
+class EmprestimoController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,13 +30,13 @@ class VeiculoController extends Controller
     }
 
     /**
-     * Lists all Veiculo models.
+     * Lists all Emprestimo models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Veiculo::find(),
+            'query' => Emprestimo::find(),
         ]);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class VeiculoController extends Controller
     }
 
     /**
-     * Displays a single Veiculo model.
+     * Displays a single Emprestimo model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,39 +58,17 @@ class VeiculoController extends Controller
     }
 
     /**
-     * Creates a new Veiculo model.
+     * Creates a new Emprestimo model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Veiculo();
+        $model = new Emprestimo();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
-
-        // $model=new Banner;  // this is my model related to table
-        if(isset($_POST['Foto']))
-        {
-            $rnd = rand(0,9999);  // generate random number between 0-9999
-            $model->attributes=$_POST['Foto'];
-            
-            $uploadedFile=CUploadedFile::getInstance($model,'image');
-            $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-            $model->image = $fileName;
-            
-            if($model->save())
-            {
-                $uploadedFile->saveAs(Yii::app()->basePath.'/../banner/'.$fileName);  // image will uplode to rootDirectory/banner/
-                $this->redirect(array('admin'));
-            }
-        }
-        // $this->render('create',array(
-        //     'model'=>$model,
-        // ));
-
 
         return $this->render('create', [
             'model' => $model,
@@ -98,7 +76,7 @@ class VeiculoController extends Controller
     }
 
     /**
-     * Updates an existing Veiculo model.
+     * Updates an existing Emprestimo model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -118,7 +96,7 @@ class VeiculoController extends Controller
     }
 
     /**
-     * Deletes an existing Veiculo model.
+     * Deletes an existing Emprestimo model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -132,15 +110,15 @@ class VeiculoController extends Controller
     }
 
     /**
-     * Finds the Veiculo model based on its primary key value.
+     * Finds the Emprestimo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Veiculo the loaded model
+     * @return Emprestimo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Veiculo::findOne($id)) !== null) {
+        if (($model = Emprestimo::findOne($id)) !== null) {
             return $model;
         }
 

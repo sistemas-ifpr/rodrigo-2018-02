@@ -21,11 +21,12 @@ use \yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'modelo')->dropDownList(ArrayHelper::map(Veiculo::find()->all(),'id', 'modelo')) ?>
 
-    <?= $form->field($model, 'data_reserva')->textInput() ?>
+    <?= $form->field($model, 'data_reserva')->input('date', []) ?>
 
     <?= $form->field($model, 'cliente')->dropDownList(ArrayHelper::map(Locatario::find()->all(),'id', 'nome')) ?>
 
-    <?= $form->field($model, 'data_baixa_reserva')->textInput() ?>
+    <?= $form->field($model, 'data_baixa_reserva')->input('date', []) ?>
+    
 
     <?= $form->field($model, 'funcionario')->dropDownList(ArrayHelper::map(Funcionarios::find()->all(),'id', 'nome')) ?>
 

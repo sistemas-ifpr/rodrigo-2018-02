@@ -1,16 +1,16 @@
-<?php
+ <?php
 
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Veiculo */
+/* @var $model app\models\Emprestimo */
 
-$this->title = 'Update Veiculo: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Veiculos', 'url' => ['index']];
+$this->title = 'Update Emprestimo: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Emprestimos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="veiculo-update">
+<div class="emprestimo-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

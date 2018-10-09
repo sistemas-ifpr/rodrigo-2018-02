@@ -5,29 +5,28 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "reserva".
+ * This is the model class for table "emprestimo".
  *
  * @property int $id
- * @property int $marca
- * @property int $modelo
- * @property string $data_reserva
+ * @property int $placa
+ * @property string $data_emprestimo
+ * @property string $data_devolucao
+ * @property double $valor_locacao
  * @property int $cliente
- * @property string $data_baixa_reserva
  * @property int $funcionario
  *
  * @property Locatario $cliente
  * @property Funcionarios $funcionario
- * @property Marca $marca
- * @property Veiculo $modelo
+ * @property Veiculo $placa
  */
-class Reserva extends \yii\db\ActiveRecord
+class Emprestimo extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'reserva';
+        return 'emprestimo';
     }
 
     /**
@@ -36,13 +35,13 @@ class Reserva extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['marca', 'modelo', 'data_reserva', 'cliente', 'funcionario'], 'required'],
-            [['marca', 'modelo', 'cliente', 'funcionario'], 'integer'],
-            [['data_reserva', 'data_baixa_reserva'], 'safe'],
+            [['placa', 'data_emprestimo', 'data_devolucao', 'valor_locacao', 'cliente', 'funcionario'], 'required'],
+            [['placa', 'cliente', 'funcionario'], 'integer'],
+            [['data_emprestimo', 'data_devolucao'], 'safe'],
+            [['valor_locacao'], 'number'],
             [['cliente'], 'exist', 'skipOnError' => true, 'targetClass' => Locatario::className(), 'targetAttribute' => ['cliente' => 'id']],
             [['funcionario'], 'exist', 'skipOnError' => true, 'targetClass' => Funcionarios::className(), 'targetAttribute' => ['funcionario' => 'id']],
-            [['marca'], 'exist', 'skipOnError' => true, 'targetClass' => Marca::className(), 'targetAttribute' => ['marca' => 'id']],
-            [['modelo'], 'exist', 'skipOnError' => true, 'targetClass' => Veiculo::className(), 'targetAttribute' => ['modelo' => 'id']],
+            [['placa'], 'exist', 'skipOnError' => true, 'targetClass' => Veiculo::className(), 'targetAttribute' => ['placa' => 'id']],
         ];
     }
 
@@ -53,12 +52,12 @@ class Reserva extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'marca' => 'Marca',
-            'modelo' => 'Modelo',
-            'data_reserva' => 'Data Reserva',
+            'placa' => 'Placa',
+            'data_emprestimo' => 'Data Empréstimo',
+            'data_devolucao' => 'Data Devolução',
+            'valor_locacao' => 'Valor Locação',
             'cliente' => 'Cliente',
-            'data_baixa_reserva' => 'Data Baixa Reserva',
-            'funcionario' => 'Funcionario',
+            'funcionario' => 'Funcionário',
         ];
     }
 
@@ -81,16 +80,8 @@ class Reserva extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getMarca()
+    public function getPlaca()
     {
-        return $this->hasOne(Marca::className(), ['id' => 'marca']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getModelo()
-    {
-        return $this->hasOne(Veiculo::className(), ['id' => 'modelo']);
+        return $this->hasOne(Veiculo::className(), ['id' => 'placa']);
     }
 }

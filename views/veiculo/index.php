@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Veiculo';
+$this->title = 'Veiculos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="veiculo-index">
@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'modelo',
             'ano_fabricacao',
             //'valor_diario',
+            //'foto',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

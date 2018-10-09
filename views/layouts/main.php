@@ -43,6 +43,7 @@ AppAsset::register($this);
                      ['label' => 'Funcionario', 'url' => ['/funcionarios/index']],
                      ['label' => 'Locatário', 'url' => ['/locatario/index']],
                      ['label' => 'Usuário', 'url' => ['/usuario/index']],
+                     ['label' => 'Emprestimo', 'url' => ['/emprestimo/index']],
                 ],
             ],
         ],
