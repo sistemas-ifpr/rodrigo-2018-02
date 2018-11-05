@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'valor_locacao',
             'cliente',
             'funcionario',
+            'ativo',
         ],
     ]) ?>
 

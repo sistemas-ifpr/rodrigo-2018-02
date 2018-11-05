@@ -70,28 +70,6 @@ class VeiculoController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-
-        // $model=new Banner;  // this is my model related to table
-        if(isset($_POST['Foto']))
-        {
-            $rnd = rand(0,9999);  // generate random number between 0-9999
-            $model->attributes=$_POST['Foto'];
-            
-            $uploadedFile=CUploadedFile::getInstance($model,'image');
-            $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
-            $model->image = $fileName;
-            
-            if($model->save())
-            {
-                $uploadedFile->saveAs(Yii::app()->basePath.'/../banner/'.$fileName);  // image will uplode to rootDirectory/banner/
-                $this->redirect(array('admin'));
-            }
-        }
-        // $this->render('create',array(
-        //     'model'=>$model,
-        // ));
-
-
         return $this->render('create', [
             'model' => $model,
         ]);

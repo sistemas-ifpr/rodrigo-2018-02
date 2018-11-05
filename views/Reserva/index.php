@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Reserva', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Nova Reserva', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,15 +25,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'marca',
             'modelo',
-            'data_reserva',
-            'cliente',
-            //'data_baixa_reserva',
-            //'funcionario',
-
+            //'data_reserva',
             [
                 'attribute'=>'data_reserva',
                 'format'=>['DateTime','php:d/m/Y']
             ],
+            'cliente',
+            //'data_baixa_reserva',
+            //'funcionario',
+
+            
+
+
 
 
             ['class' => 'yii\grid\ActionColumn'],

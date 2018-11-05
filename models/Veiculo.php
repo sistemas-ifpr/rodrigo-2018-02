@@ -41,8 +41,6 @@ class Veiculo extends \yii\db\ActiveRecord
             [['marca'], 'string', 'max' => 20],
             [['modelo'], 'string', 'max' => 50],
             [['foto'], 'string', 'max' => 100],
-            array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>true, 'on'=>'update'), // this will allow empty field when page is update (remember here i create scenario update)
-            array('title, image', 'length', 'max'=>255, 'on'=>'insert,update'),
         ];
     }
 

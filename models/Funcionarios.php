@@ -35,7 +35,7 @@ class Funcionarios extends \yii\db\ActiveRecord
             [['nome', 'cpf', 'telefone', 'celular', 'endereco', 'data_admissao', 'data_demissao'], 'required'],
             [['data_admissao', 'data_demissao'], 'safe'],
             [['nome', 'endereco'], 'string', 'max' => 50],
-            [['cpf', 'telefone', 'celular'], 'string', 'max' => 11],
+            [['cpf', 'telefone', 'celular'], 'string', 'max' => 20],
         ];
     }
 

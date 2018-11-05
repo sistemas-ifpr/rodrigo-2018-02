@@ -14,6 +14,7 @@ use Yii;
  * @property double $valor_locacao
  * @property int $cliente
  * @property int $funcionario
+ * @property int $ativo
  *
  * @property Locatario $cliente
  * @property Funcionarios $funcionario
@@ -35,8 +36,8 @@ class Emprestimo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['placa', 'data_emprestimo', 'data_devolucao', 'valor_locacao', 'cliente', 'funcionario'], 'required'],
-            [['placa', 'cliente', 'funcionario'], 'integer'],
+            [['placa', 'data_emprestimo', 'data_devolucao', 'valor_locacao', 'cliente', 'funcionario', 'ativo'], 'required'],
+            [['placa', 'cliente', 'funcionario', 'ativo'], 'integer'],
             [['data_emprestimo', 'data_devolucao'], 'safe'],
             [['valor_locacao'], 'number'],
             [['cliente'], 'exist', 'skipOnError' => true, 'targetClass' => Locatario::className(), 'targetAttribute' => ['cliente' => 'id']],
@@ -53,11 +54,12 @@ class Emprestimo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'placa' => 'Placa',
-            'data_emprestimo' => 'Data Empréstimo',
-            'data_devolucao' => 'Data Devolução',
-            'valor_locacao' => 'Valor Locação',
+            'data_emprestimo' => 'Data Emprestimo',
+            'data_devolucao' => 'Data Devolucao',
+            'valor_locacao' => 'Valor Locacao',
             'cliente' => 'Cliente',
-            'funcionario' => 'Funcionário',
+            'funcionario' => 'Funcionario',
+            'ativo' => 'Ativo',
         ];
     }
 

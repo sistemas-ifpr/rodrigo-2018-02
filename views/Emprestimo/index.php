@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -22,23 +22,29 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-
+            'id',
+            'placa',
+            //'data_emprestimo',
             [
                 'attribute'=>'data_emprestimo',
                 'format'=>['DateTime','php:d/m/Y']
             ],
-
-            [
+            //'data_devolucao',
+             [
                 'attribute'=>'data_devolucao',
                 'format'=>['DateTime','php:d/m/Y']
             ],
-            'id',
-            'placa',
-            'data_emprestimo',
-            'data_devolucao',
             'valor_locacao',
-            //'cliente',
-            //'funcionario',
+            'cliente',
+            'funcionario',
+            //'label'=> 'Ativo',
+             ['attribute'=>'ativo',
+                'value' => function ($model) {
+                    return ($model->ativo == 0)? 'Não' : 'Sim';
+                }
+            ],
+
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
