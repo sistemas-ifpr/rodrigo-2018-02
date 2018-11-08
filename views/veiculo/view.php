@@ -34,7 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'modelo',
             'ano_fabricacao',
             'valor_diario',
-            'foto',
+            [
+                'attribute'=>'foto',
+                'value'=> Yii::getAlias('@veiculoFotUrl') . '/' . $model->foto,
+                'format'=>['image',['width'=>'100','height'=>'100']]
+            ]
         ],
     ]) ?>
 

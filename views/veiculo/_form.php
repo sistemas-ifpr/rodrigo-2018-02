@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="veiculo-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->field($model, 'placa')->textInput(['maxlength' => true]) ?>
 
@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'ano_fabricacao')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'valor_diario')->textInput() ?>
+
+    <?= $form->field($model, 'foto')->fileInput() ?>
 
    
     </div>

@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * VeiculoController implements the CRUD actions for Veiculo model.
@@ -62,13 +63,19 @@ class VeiculoController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate() {
         $model = new Veiculo();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
+            $fotoId = $model->id;
+            $fot = UploadedFile::getInstance($model, 'foto');
+            $imgName = 'fot_'. $fotoId . '.' . $fot->getExtension();
+            $fot->saveAs(Yii::getAlias('@veiculoFotPath') .'/' .$imgName);
+            $model->foto = $imgName;
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
-        }
+        } 
 
         return $this->render('create', [
             'model' => $model,
