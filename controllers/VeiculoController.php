@@ -68,10 +68,9 @@ class VeiculoController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->save();
-            $fotoId = $model->id;
             $fot = UploadedFile::getInstance($model, 'foto');
-            $imgName = 'fot_'. $fotoId . '.' . $fot->getExtension();
-            $fot->saveAs(Yii::getAlias('@veiculoFotPath') .'/' .$imgName);
+            $imgName = 'fot_'. $model->id . '.' . $fot->getExtension();
+            $fot->saveAs(Yii::getAlias('@veiculoFotPath') .'\\' .$imgName);
             $model->foto = $imgName;
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);

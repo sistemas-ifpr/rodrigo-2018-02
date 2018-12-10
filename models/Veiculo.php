@@ -14,6 +14,7 @@ use Yii;
  * @property string $ano_fabricacao
  * @property double $valor_diario
  * @property string $foto
+
  *
  * @property Emprestimo[] $emprestimos
  * @property Reserva[] $reservas
@@ -34,7 +35,7 @@ class Veiculo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['placa', 'marca', 'modelo', 'ano_fabricacao', 'valor_diario', 'foto'], 'required'],
+            [['placa', 'marca', 'modelo', 'ano_fabricacao', 'valor_diario'], 'required'],
             [['ano_fabricacao'], 'safe'],
             [['valor_diario'], 'number'],
             [['placa'], 'string', 'max' => 7],
@@ -54,8 +55,8 @@ class Veiculo extends \yii\db\ActiveRecord
             'placa' => 'Placa',
             'marca' => 'Marca',
             'modelo' => 'Modelo',
-            'ano_fabricacao' => 'Ano Fabricacao',
-            'valor_diario' => 'Valor Diario',
+            'ano_fabricacao' => 'Ano Fabricação',
+            'valor_diario' => 'Valor Diário',
             'foto' => 'Foto',
         ];
     }

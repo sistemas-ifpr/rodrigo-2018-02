@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Emprestimos';
+$this->title = 'Empréstimos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="emprestimo-index">
@@ -14,13 +14,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Emprestimo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Empréstimo', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            
 
             'id',
             'placa',

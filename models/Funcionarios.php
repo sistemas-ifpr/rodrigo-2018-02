@@ -14,7 +14,7 @@ use Yii;
  * @property string $celular
  * @property string $endereco
  * @property string $data_admissao
- * @property string $data_demissao
+
  */
 class Funcionarios extends \yii\db\ActiveRecord
 {
@@ -32,8 +32,8 @@ class Funcionarios extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'cpf', 'telefone', 'celular', 'endereco', 'data_admissao', 'data_demissao'], 'required'],
-            [['data_admissao', 'data_demissao'], 'safe'],
+            [['nome', 'cpf', 'telefone', 'celular', 'endereco', 'data_admissao'], 'required'],
+            [['data_admissao'], 'safe'],
             [['nome', 'endereco'], 'string', 'max' => 50],
             [['cpf', 'telefone', 'celular'], 'string', 'max' => 20],
         ];
@@ -47,12 +47,12 @@ class Funcionarios extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'cpf' => 'Cpf',
+            'cpf' => 'CPF',
             'telefone' => 'Telefone',
             'celular' => 'Celular',
-            'endereco' => 'Endereco',
-            'data_admissao' => 'Data Admissao',
-            'data_demissao' => 'Data Demissao',
+            'endereco' => 'Endereço',
+            'data_admissao' => 'Data Admissão',
+            'data_demissao' => 'Data Demissão',
         ];
     }
 }

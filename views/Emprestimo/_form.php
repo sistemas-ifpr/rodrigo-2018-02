@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Emprestimo */
 /* @var $form yii\widgets\ActiveForm */
-?>
+?> 
 
 <div class="emprestimo-form">
 
