@@ -27,12 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
             //'data_emprestimo',
             [
                 'attribute'=>'data_emprestimo',
-                'format'=>['DateTime','php:d/m/Y']
+                'format'=>['DateTime','php:d/m/Y H:i:s']
             ],
             //'data_devolucao',
              [
                 'attribute'=>'data_devolucao',
-                'format'=>['DateTime','php:d/m/Y']
+                'format'=>['Date','php:d/m/Y ']
             ],
             'valor_locacao',
             'cliente',

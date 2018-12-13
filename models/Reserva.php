@@ -58,7 +58,7 @@ class Reserva extends \yii\db\ActiveRecord
             'data_reserva' => 'Data Reserva',
             'cliente' => 'Cliente',
             'data_baixa_reserva' => 'Data Baixa Reserva',
-            'funcionario' => 'Funcionario',
+            'funcionario' => 'Funcionário',
         ];
     }
 

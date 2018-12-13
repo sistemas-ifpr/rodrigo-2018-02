@@ -48,11 +48,11 @@ class CadLocatario extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
-            'cpf' => 'Cpf',
+            'cpf' => 'CPF',
             'telefone' => 'Telefone',
             'celular' => 'Celular',
-            'endereco' => 'Endereco',
-            'num_carteira_habilitacao' => 'Num Carteira Habilitacao',
+            'endereco' => 'Endereço',
+            'num_carteira_habilitacao' => 'Numero CNH',
         ];
     }
 

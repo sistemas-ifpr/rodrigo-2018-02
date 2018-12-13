@@ -50,7 +50,7 @@ class Locatario extends \yii\db\ActiveRecord
             'telefone' => 'Telefone',
             'celular' => 'Celular',
             'endereco' => 'Endereço',
-            'num_carteira_habilitacao' => 'Numero Cart Habilitação',
+            'num_carteira_habilitacao' => 'Numero CNH',
         ];
     }
 }

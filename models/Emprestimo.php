@@ -54,11 +54,11 @@ class Emprestimo extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'placa' => 'Placa',
-            'data_emprestimo' => 'Data Emprestimo',
-            'data_devolucao' => 'Data Devolucao',
-            'valor_locacao' => 'Valor Locacao',
+            'data_emprestimo' => 'Data Empréstimo',
+            'data_devolucao' => 'Data Devolução',
+            'valor_locacao' => 'Valor Locação',
             'cliente' => 'Cliente',
-            'funcionario' => 'Funcionario',
+            'funcionario' => 'Funcionário',
             'ativo' => 'Ativo',
         ];
     }

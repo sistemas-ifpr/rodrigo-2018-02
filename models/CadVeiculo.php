@@ -54,9 +54,9 @@ class CadVeiculo extends \yii\db\ActiveRecord
             'placa' => 'Placa',
             'marca' => 'Marca',
             'modelo' => 'Modelo',
-            'ano_fabricacao' => 'Ano Fabricacao',
-            'valor_diario' => 'Valor Diario',
-            'cad_imagem' => 'Cad Imagem',
+            'ano_fabricacao' => 'Ano Fabricação',
+            'valor_diario' => 'Valor Diário',
+            'cad_imagem' => 'Cadastro de Imagem',
         ];
     }
 

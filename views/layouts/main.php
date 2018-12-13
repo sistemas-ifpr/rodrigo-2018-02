@@ -1,4 +1,4 @@
-<?php
+p<?php
 /* @var $this \yii\web\View */
 /* @var $content string */
 use app\widgets\Alert;
@@ -40,7 +40,7 @@ AppAsset::register($this);
                 'items' => [
                      ['label' => 'Veiculo', 'url' => ['/veiculo/index']],
                      ['label' => 'Marca', 'url' => ['/marca/index']],
-                     ['label' => 'Funcionario', 'url' => ['/funcionarios/index']],
+                     ['label' => 'Funcionário', 'url' => ['/funcionarios/index']],
                      ['label' => 'Locatário', 'url' => ['/locatario/index']],
                      ['label' => 'Usuário', 'url' => ['/usuario/index']],
                      ['label' => 'Emprestimo', 'url' => ['/emprestimo/index']],
